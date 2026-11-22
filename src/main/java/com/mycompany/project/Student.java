@@ -3,15 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.project;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 /**
  * James Wiggins
  * Student
  * This is the class Student for identification of
- * any student using their ID, name, and subject they're taking
+ * any student using their ID, name, and subject they're taking, and capability
+ * for file saving.
  */
-public class Student {
+public class Student implements Serializable{
+    private static final long serialVersionUID = 1L;
     private String id;      // ID
     private String name;    // Name
     private List<Subject> subjects;     // Subject (from subject class)
@@ -43,7 +46,7 @@ public class Student {
     }
     
     // add/update grade
-    public void addSubject(String subjectName, double grade)
+    public void addOrUpdateSubject(String subjectName, double grade)
     {
         for (Subject s : subjects) 
         {
